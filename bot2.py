@@ -12,11 +12,11 @@ class Name(Field):
 class Phone(Field):
     def __init__(self, value):
         if not self.validate_phone_number(value):
-            raise ValueError("Invalid phone number format. Use format: +XXXXXXXXXXXX")
+            raise ValueError("Invalid phone number format. Use format: XXXXXXXXXX")
         self.value = value
 
     def validate_phone_number(self, number):
-        return len(number) == 13 and number[1:].isdigit()
+        return len(number) == 10 and number.isdigit()
 
 class Birthday(Field):
     def __init__(self, value):
